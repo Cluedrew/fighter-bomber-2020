@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Players/BomberPlane.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemies/Tank.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemies/Drone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Players/FighterPlane.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemies/DroneSideways.gd" type="Script" id=5]
+
+[node name="TestLevel1" type="Node2D"]
+
+[node name="Fighter" parent="." instance=ExtResource( 4 )]
+position = Vector2( 208.137, 433.959 )
+
+[node name="BomberPlane" parent="." instance=ExtResource( 1 )]
+position = Vector2( 790.449, 443.912 )
+
+[node name="Tank" parent="." instance=ExtResource( 2 )]
+position = Vector2( 658.708, 210.5 )
+
+[node name="Drone" parent="." instance=ExtResource( 3 )]
+position = Vector2( 286.795, 145.493 )
+
+[node name="DroneLeft" parent="." instance=ExtResource( 3 )]
+position = Vector2( -54.4149, 148.925 )
+script = ExtResource( 5 )
+
+[node name="DroneRight" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1062.52, 100.67 )
+script = ExtResource( 5 )
+side = 1

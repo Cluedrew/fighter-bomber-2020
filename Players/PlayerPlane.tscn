@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Players/PlayerPlane.gd" type="Script" id=2]
+[ext_resource path="res://Players/target.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 25.0
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="PlayerPlane" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="Body" type="Sprite" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="BulletTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="BombTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Target" type="AnimatedSprite" parent="."]
+frames = SubResource( 3 )
+offset = Vector2( 0, -128 )
